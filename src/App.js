@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Song, Track, Instrument } from "reactronica";
+import "./App.css";
+import { useState } from "react";
+import KeyboardAudio from "./components/KeyboardAudio";
 
 function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Song isPlaying={isPlaying}>
+        <Track steps={["C3", "E3", "G3", null]}>
+          <Instrument type="synth" />
+        </Track>
+      </Song>
+
+      <button
+        onClick={() => {
+          setIsPlaying(!isPlaying);
+        }}
+      >
+        {isPlaying ? "Stop sound" : "Play sound"}
+      </button>
+
+      <KeyboardAudio />
     </div>
   );
 }
