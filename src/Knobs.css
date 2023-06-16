@@ -1,0 +1,11 @@
+.knobs-container {
+  display: flex;
+  width: 160px;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  background-color: aqua;
+}
+
+.knob-label {
+  font-size: 12px;
+}

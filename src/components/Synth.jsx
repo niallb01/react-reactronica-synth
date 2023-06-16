@@ -4,8 +4,10 @@ import FXKnobs from "./FXKnobs";
 const Synth = (props) => {
   return (
     <>
-      <FXKnobs />
-      <Keyboard />
+      <div className="synth-container">
+        <FXKnobs />
+        <Keyboard />
+      </div>
     </>
   );
 };

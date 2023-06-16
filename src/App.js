@@ -1,6 +1,7 @@
 import React from "react";
 import { Song, Track, Instrument } from "reactronica";
 import "./App.css";
+import "./Knobs.css";
 import { useState } from "react";
 import KeyboardAudio from "./components/KeyboardAudio";
 
