@@ -7,6 +7,7 @@
 body {
   display: flex;
   background-color: peru;
+  /* background-color: #242424; */
 }
 
 .keyboard-container {
@@ -56,4 +57,8 @@ body {
   /* background: linear-gradient(#fff 99%, #eee 4%); */
   cursor: pointer;
   height: 210px;
+}
+
+.knob-label {
+  font-size: 12px;
 }

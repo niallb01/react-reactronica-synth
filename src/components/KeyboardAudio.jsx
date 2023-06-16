@@ -1,13 +1,13 @@
 import { Song, Track, Instrument } from "reactronica";
 import { useState } from "react";
-import Keyboard from "./Keyboard";
+import Synth from "./Synth";
 
 const KeyboardAudio = (props) => {
   const [notes, setNotes] = useState([]);
 
   return (
     <>
-      <Keyboard
+      <Synth
         onMouseDown={(notes) => setNotes(notes)}
         onMouseUp={() => setNotes([])}
       />
