@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Donut } from "react-dial-knob";
-import "../Knobs.css";
+import "../panel.css";
 
 const FXKnobs = (props) => {
   const [volumeAmount, setVolumeAmount] = useState(0);

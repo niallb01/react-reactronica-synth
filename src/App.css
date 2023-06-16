@@ -14,13 +14,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* width: 1400px; */
   background-color: red;
 }
 
 .synth-container {
   background-color: beige;
+}
+
+.front-panel {
+  display: flex;
 }
 
 .synth-keys {
@@ -62,15 +66,4 @@ body {
   /* background: linear-gradient(#fff 99%, #eee 4%); */
   cursor: pointer;
   height: 210px;
-}
-
-.knob-label {
-  font-size: 12px;
-}
-
-.knobs-container {
-  display: flex;
-  width: 160px;
-  /* flex-direction: row; */
-  flex-wrap: wrap;
 }

@@ -1,0 +1,35 @@
+.knobs-container {
+  display: flex;
+  width: 160px;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  background-color: aqua;
+}
+
+.knob-label {
+  font-size: 12px;
+}
+
+.oscillators-container,
+.synth-engine-container {
+  display: flex;
+  /* width: 160px; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: pink;
+}
+
+.synth-engine-container {
+  display: flex;
+  /* width: 160px; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: green;
+}
+
+.oscillators-label,
+.synth-engine-label,
+.oscillators-header,
+.synth-engine-header {
+  font-size: 12px;
+}
