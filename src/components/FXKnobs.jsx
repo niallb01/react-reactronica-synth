@@ -12,7 +12,8 @@ const FXKnobs = (props) => {
 
   return (
     <>
-      <div className="knobs-container">
+      <div className="fx-knobs-container-1">
+        <label className={"knob-label"}>Volume</label>
         <Donut
           diameter={30}
           min={0}
@@ -24,10 +25,8 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setVolumeAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Volume</label>
-        </Donut>
-
+        ></Donut>
+        <label className={"knob-label"}>Reverb</label>
         <Donut
           diameter={30}
           min={0}
@@ -39,9 +38,11 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setReverbAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Reverb</label>
-        </Donut>
+        ></Donut>
+      </div>
+
+      <div className="fx-knobs-container-2">
+        <label className={"knob-label"}>Delay</label>
 
         <Donut
           diameter={30}
@@ -54,9 +55,8 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setDelayAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Delay</label>
-        </Donut>
+        ></Donut>
+        <label className={"knob-label"}>Distortion</label>
 
         <Donut
           diameter={30}
@@ -69,9 +69,11 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setDistortionAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Distortion</label>
-        </Donut>
+        ></Donut>
+      </div>
+
+      <div className="fx-knobs-container-3">
+        <label className={"knob-label"}>Tremelo</label>
 
         <Donut
           diameter={30}
@@ -84,9 +86,8 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setTremeloAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Tremelo</label>
-        </Donut>
+        ></Donut>
+        <label className={"knob-label"}>Auto Filter</label>
 
         <Donut
           diameter={30}
@@ -99,9 +100,7 @@ const FXKnobs = (props) => {
           }}
           onValueChange={setAutoFilterAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Auto Filter</label>
-        </Donut>
+        ></Donut>
       </div>
     </>
   );

@@ -10,7 +10,8 @@ const Envelope = (props) => {
 
   return (
     <>
-      <div className="envelope-container">
+      <div className="envelope-container-1">
+        <label className={"knob-label"}>Attack</label>
         <Donut
           diameter={30}
           min={0}
@@ -22,10 +23,8 @@ const Envelope = (props) => {
           }}
           onValueChange={setAttack}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Attack</label>
-        </Donut>
-
+        ></Donut>
+        <label className={"knob-label"}>Decay</label>
         <Donut
           diameter={30}
           min={0}
@@ -37,10 +36,10 @@ const Envelope = (props) => {
           }}
           onValueChange={setDecay}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Decay</label>
-        </Donut>
-
+        ></Donut>
+      </div>
+      <div className="envelope-container-2">
+        <label className={"knob-label"}>Sustain</label>
         <Donut
           diameter={30}
           min={0}
@@ -52,10 +51,9 @@ const Envelope = (props) => {
           }}
           onValueChange={setSustain}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Sustain</label>
-        </Donut>
+        ></Donut>
 
+        <label className={"knob-label"}>Release</label>
         <Donut
           diameter={30}
           min={0}
@@ -67,9 +65,7 @@ const Envelope = (props) => {
           }}
           onValueChange={setRelease}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Release</label>
-        </Donut>
+        ></Donut>
       </div>
     </>
   );

@@ -9,6 +9,7 @@ const Tempo = (props) => {
   return (
     <>
       <div className="tempo-container">
+        <label className={"knob-label"}>Tempo</label>
         <Donut
           diameter={30}
           min={0}
@@ -21,9 +22,10 @@ const Tempo = (props) => {
           onValueChange={setTempo}
           ariaLabelledBy={"knob-label"}
         >
-          <label className={"knob-label"}>Tempo</label>
+          {/* <label className={"knob-label"}>Tempo</label> */}
         </Donut>
 
+        <label className={"knob-label"}>Pan</label>
         <Donut
           diameter={30}
           min={0}
@@ -35,9 +37,7 @@ const Tempo = (props) => {
           }}
           onValueChange={setPanAmount}
           ariaLabelledBy={"knob-label"}
-        >
-          <label className={"knob-label"}>Pan</label>
-        </Donut>
+        ></Donut>
       </div>
     </>
   );

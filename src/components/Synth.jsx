@@ -11,10 +11,10 @@ const Synth = (props) => {
     <>
       <div className="synth-container">
         <div className="front-panel">
-          <FXKnobs />
           <Oscillators />
-          <Envelope />
           <Engine />
+          <FXKnobs />
+          <Envelope />
           <Tempo />
           <Sequencer />
         </div>
