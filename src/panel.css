@@ -1,5 +1,7 @@
 .knob-label {
   font-size: 12px;
+  margin-bottom: 2px;
+  color: #fff;
 }
 
 .oscillators-container,
@@ -9,6 +11,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   background-color: pink;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
 .synth-engine-container {
@@ -17,6 +21,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   background-color: green;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
 .tempo-container,
@@ -28,11 +34,15 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: purple;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
 .envelope-container-1,
 .envelope-container-2 {
   background-color: yellow;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
 .fx-knobs-container-1,
@@ -45,6 +55,8 @@
   flex-wrap: wrap;
   /* width: 60px; */
   background-color: grey;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
 .step-btn {
@@ -57,20 +69,32 @@
   /* background-color: brown;
   display: flex; */
   background-color: brown;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
   display: flex;
+  justify-content: center;
   width: 250px;
   flex-wrap: wrap;
 }
 
 .sequencer-container {
-  width: 310px;
+  /* width: 310px; */
   background-color: gray;
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
 }
 
+.sequencer-btn-container {
+  background-color: #1c1c1c;
+  background-color: #1a1a1a;
+}
+
+.sequncer-header,
 .oscillators-label,
 .synth-engine-label,
 .oscillators-header,
 .synth-engine-header,
 .sequencer-header {
   font-size: 12px;
+  color: #fff;
 }

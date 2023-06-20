@@ -21,9 +21,7 @@ const Tempo = (props) => {
           }}
           onValueChange={setTempo}
           ariaLabelledBy={"knob-label"}
-        >
-          {/* <label className={"knob-label"}>Tempo</label> */}
-        </Donut>
+        ></Donut>
 
         <label className={"knob-label"}>Pan</label>
         <Donut

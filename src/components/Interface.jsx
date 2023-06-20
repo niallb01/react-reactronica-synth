@@ -5,8 +5,9 @@ import Engine from "./Engine";
 import Envelope from "./Envelope";
 import Tempo from "./Tempo";
 import Sequencer from "./Sequencer";
+import SequencerControls from "./SequencerControls";
 
-const Synth = (props) => {
+const Interface = (props) => {
   return (
     <>
       <div className="synth-container">
@@ -17,6 +18,7 @@ const Synth = (props) => {
           <Envelope />
           <Tempo />
           <Sequencer />
+          <SequencerControls onPlayAudio={props.onPlayAudio} />
         </div>
         <Keyboard />
       </div>
@@ -24,4 +26,4 @@ const Synth = (props) => {
   );
 };
 
-export default Synth;
+export default Interface;
