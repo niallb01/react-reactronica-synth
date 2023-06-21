@@ -1,29 +1,27 @@
-import { useState } from "react";
-import { Song, Track, Instrument, Effect } from "reactronica";
+// import { useState } from "react";
 import { Donut } from "react-dial-knob";
-
 import "../panel.css";
 
 const FXKnobs = (props) => {
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const [volumeAmount, setVolumeAmount] = useState(-4);
-  // const [reverbAmount, setReverbAmount] = useState(0);
-  const [delayAmount, setDelayAmount] = useState(0);
-  const [distortionAmount, setDistortionAmount] = useState(0);
-  const [tremeloAmount, setTremeloAmount] = useState(0);
-  const [autoFilterAmount, setAutoFilterAmount] = useState(0);
+  const {
+    volume,
+    setVolume,
+    reverb,
+    setReverb,
+    delay,
+    setDelay,
+    distortion,
+    setDistortion,
+    tremelo,
+    setTremelo,
+    autoFilter,
+    setAutoFilter,
+  } = props;
 
-  const { volume, setVolume, reverb, setReverb } = props;
-
+  // console.log(props, "fx comp");
   return (
     <>
       <div className="fx-knobs-container-1">
-        <Song>
-          <Track volume={volume}>
-            <Instrument type="synth" />
-          </Track>
-        </Song>
-
         <label className={"knob-label"}>Volume</label>
         <Donut
           diameter={30}
@@ -43,7 +41,7 @@ const FXKnobs = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
+          step={0.25}
           value={reverb}
           theme={{
             donutColor: "silver",
@@ -60,12 +58,12 @@ const FXKnobs = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
-          value={delayAmount}
+          step={0.25}
+          value={delay}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setDelayAmount}
+          onValueChange={setDelay}
           ariaLabelledBy={"knob-label"}
         ></Donut>
         <label className={"knob-label"}>Distortion</label>
@@ -74,12 +72,12 @@ const FXKnobs = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
-          value={distortionAmount}
+          step={0.25}
+          value={distortion}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setDistortionAmount}
+          onValueChange={setDistortion}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>
@@ -91,12 +89,12 @@ const FXKnobs = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
-          value={tremeloAmount}
+          step={0.25}
+          value={tremelo}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setTremeloAmount}
+          onValueChange={setTremelo}
           ariaLabelledBy={"knob-label"}
         ></Donut>
         <label className={"knob-label"}>Auto Filter</label>
@@ -105,12 +103,12 @@ const FXKnobs = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
-          value={autoFilterAmount}
+          step={0.25}
+          value={autoFilter}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setAutoFilterAmount}
+          onValueChange={setAutoFilter}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>

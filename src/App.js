@@ -10,6 +10,10 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(-4);
   const [reverb, setReverb] = useState(0);
+  const [delay, setDelay] = useState(0);
+  const [distortion, setDistortion] = useState(0);
+  const [tremelo, setTremelo] = useState(0);
+  const [autoFilter, setAutoFilter] = useState(0);
 
   const onPlayAudio = () => {
     setIsPlaying(!isPlaying);
@@ -35,6 +39,10 @@ function App() {
         >
           <Instrument type="synth" />
           <Effect type="freeverb" wet={reverb} />
+          <Effect type="feedbackDelay" wet={delay} />
+          <Effect type="distortion" wet={distortion} />
+          <Effect type="tremelo" wet={tremelo} />
+          <Effect type="autoFilter" wet={autoFilter} />
         </Track>
       </Song>
 
@@ -44,6 +52,14 @@ function App() {
         setVolume={setVolume}
         reverb={reverb}
         setReverb={setReverb}
+        delay={delay}
+        setDelay={setDelay}
+        distortion={distortion}
+        setDistortion={setDistortion}
+        tremelo={tremelo}
+        setTremelo={setTremelo}
+        autoFilter={autoFilter}
+        setAutoFilter={setAutoFilter}
       />
     </div>
   );

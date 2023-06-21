@@ -20,6 +20,14 @@ const Synth = (props) => {
             setVolume={props.setVolume}
             reverb={props.reverb}
             setReverb={props.setReverb}
+            delay={props.delay}
+            setDelay={props.setDelay}
+            distortion={props.distortion}
+            setDistortion={props.setDistortion}
+            tremelo={props.tremelo}
+            setTremelo={props.setTremelo}
+            autoFilter={props.autoFilter}
+            setAutoFilter={props.setAutoFilter}
           />
           <Envelope />
           <Tempo />
