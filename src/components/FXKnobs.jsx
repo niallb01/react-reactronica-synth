@@ -1,44 +1,54 @@
 import { useState } from "react";
-import { Song, Track, Instrument } from "reactronica";
+import { Song, Track, Instrument, Effect } from "reactronica";
 import { Donut } from "react-dial-knob";
+
 import "../panel.css";
 
 const FXKnobs = (props) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volumeAmount, setVolumeAmount] = useState(0);
-  const [reverbAmount, setReverbAmount] = useState(0);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const [volumeAmount, setVolumeAmount] = useState(-4);
+  // const [reverbAmount, setReverbAmount] = useState(0);
   const [delayAmount, setDelayAmount] = useState(0);
   const [distortionAmount, setDistortionAmount] = useState(0);
   const [tremeloAmount, setTremeloAmount] = useState(0);
   const [autoFilterAmount, setAutoFilterAmount] = useState(0);
 
+  const { volume, setVolume, reverb, setReverb } = props;
+
   return (
     <>
       <div className="fx-knobs-container-1">
+        <Song>
+          <Track volume={volume}>
+            <Instrument type="synth" />
+          </Track>
+        </Song>
+
         <label className={"knob-label"}>Volume</label>
         <Donut
           diameter={30}
-          min={0}
-          max={100}
+          min={-50}
+          max={10}
           step={1}
-          value={volumeAmount}
+          value={volume}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setVolumeAmount}
+          onValueChange={setVolume}
           ariaLabelledBy={"knob-label"}
         ></Donut>
+
         <label className={"knob-label"}>Reverb</label>
         <Donut
           diameter={30}
           min={0}
           max={100}
           step={1}
-          value={reverbAmount}
+          value={reverb}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setReverbAmount}
+          onValueChange={setReverb}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>

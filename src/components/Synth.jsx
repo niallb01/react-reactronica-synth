@@ -7,19 +7,24 @@ import Tempo from "./Tempo";
 import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
-const Interface = (props) => {
+const Synth = (props) => {
+  // console.log(props, "synth component");
   return (
     <>
       <div className="synth-container">
         <div className="front-panel">
           <Oscillators />
           <Engine />
-          <FXKnobs />
+          <FXKnobs
+            volume={props.volume}
+            setVolume={props.setVolume}
+            reverb={props.reverb}
+            setReverb={props.setReverb}
+          />
           <Envelope />
           <Tempo />
           <Sequencer />
-          {/* <SequencerControls onPlayAudio={props.onPlayAudio} /> */}
-          <SequencerControls />
+          <SequencerControls onPlayAudio={props.onPlayAudio} />
         </div>
         <Keyboard />
       </div>
@@ -27,4 +32,4 @@ const Interface = (props) => {
   );
 };
 
-export default Interface;
+export default Synth;

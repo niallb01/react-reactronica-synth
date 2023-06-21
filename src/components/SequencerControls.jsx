@@ -1,19 +1,16 @@
-import { useState } from "react";
-import { Song, Track, Instrument } from "reactronica";
+// import { useState } from "react";
+// import { Song, Track, Instrument, Effect } from "reactronica";
 
 const SequencerControls = (props) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { onPlayAudio } = props;
 
-  // const { onPlayAudio } = props;
-
-  const onPlayAudio = () => {
-    setIsPlaying(!isPlaying);
-  };
+  // console.log(props, "sequncer control componenr");
 
   return (
     <>
-      <Song isPlaying={isPlaying}>
+      {/* <Song isPlaying={isPlaying} bpm={130}>
         <Track
+          // volume={volume}
           steps={[
             "D3",
             null,
@@ -30,7 +27,7 @@ const SequencerControls = (props) => {
         >
           <Instrument type="synth" />
         </Track>
-      </Song>
+      </Song> */}
 
       <div className="sequencer-btn-container">
         <button onClick={onPlayAudio} className="play-sequencer-btn">
