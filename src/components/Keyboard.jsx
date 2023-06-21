@@ -2,13 +2,6 @@ import { useState } from "react";
 // requirements - each key needs to track specific note, w or b, needs to track isPlaying (change color)
 
 const Keyboard = (props) => {
-  // const [isPlaying, setIsPlaying] = useState(false);
-
-  // const onKeyClick = () => {
-  //   console.log("key");
-  // };
-  console.log(props, "keyboard");
-
   return (
     <>
       <div className="keyboard-container">

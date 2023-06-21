@@ -12,6 +12,10 @@ body {
   /* background-color: #242424; */
 }
 
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+
 .keyboard-container {
   display: flex;
   justify-content: center;

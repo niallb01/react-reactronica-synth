@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Song, Track, Instrument } from "reactronica";
 import { Donut } from "react-dial-knob";
 import "../panel.css";
 
 const FXKnobs = (props) => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const [volumeAmount, setVolumeAmount] = useState(0);
   const [reverbAmount, setReverbAmount] = useState(0);
   const [delayAmount, setDelayAmount] = useState(0);

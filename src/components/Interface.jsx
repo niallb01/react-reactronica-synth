@@ -18,7 +18,8 @@ const Interface = (props) => {
           <Envelope />
           <Tempo />
           <Sequencer />
-          <SequencerControls onPlayAudio={props.onPlayAudio} />
+          {/* <SequencerControls onPlayAudio={props.onPlayAudio} /> */}
+          <SequencerControls />
         </div>
         <Keyboard />
       </div>

@@ -2,32 +2,30 @@ import React from "react";
 import { Song, Track, Instrument } from "reactronica";
 import "./App.css";
 import { useState } from "react";
-// import KeyboardAudio from "./components/KeyboardAudio";
 import Interface from "./components/Interface";
-import SequencerControls from "./components/SequencerControls";
 // audio context - audio nodes - osc, filter, reverb, delay - can be sound modification objects - filter - reverb - compression
 // nodes are objects - console log to see properties - when we create node we need to route it somewhere - speaker or another node before destination(speakers or other output)
 
 function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
-  const onPlayAudio = () => {
-    setIsPlaying(!isPlaying);
-  };
+  // const onPlayAudio = () => {
+  //   setIsPlaying(!isPlaying);
+  // };
 
   return (
     <div className="App">
-      <Song isPlaying={isPlaying}>
+      {/* <Song isPlaying={isPlaying}>
         <Track
           steps={[
-            "C3",
+            "D3",
             null,
-            "E3",
-            "G3",
+            "F3",
+            "A3",
             null,
-            "A4",
+            "D4",
             null,
-            "G5",
+            "C5",
             null,
             null,
             "D3",
@@ -35,18 +33,14 @@ function App() {
         >
           <Instrument type="synth" />
         </Track>
-      </Song>
+      </Song> */}
 
-      {/* <button
-        onClick={() => {
-          setIsPlaying(!isPlaying);
-        }}
-      >
-        {isPlaying ? "Stop sound" : "Play sound"}
-      </button> */}
+      <header className="app-header">
+        <h1>Reactronica Synth</h1>
+      </header>
+      <Interface />
 
-      <Interface onPlayAudio={onPlayAudio} />
-      {/* <SequencerControls onPlayAudio={onPlayAudio} /> */}
+      {/* <Interface onPlayAudio={onPlayAudio} /> */}
     </div>
   );
 }
