@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../panel.css";
 
 const Oscillators = (props) => {
@@ -7,7 +6,7 @@ const Oscillators = (props) => {
   // const [square, setSquare] = useState();
 
   const { oscillatorType, onSelectOscType } = props;
-
+  console.log("osc comp", props);
   return (
     <>
       <div className="oscillators-container">
@@ -18,7 +17,9 @@ const Oscillators = (props) => {
         <input
           type="radio"
           value={oscillatorType}
-          onChange={onSelectOscType}
+          // onChange={onSelectOscType}
+          onClick={() => onSelectOscType("sine")}
+          // onClick={setOscillatorType}
           name="osc-radio"
           label
         ></input>
@@ -28,7 +29,10 @@ const Oscillators = (props) => {
         <input
           type="radio"
           value={oscillatorType}
-          onChange={onSelectOscType}
+          // onClick={() => setOscillatorType("triangle")}
+          onClick={() => onSelectOscType("triangle")}
+          // onClick={() => setOscillatorType("triangle")}
+          // onChange={onSelectOscType}
           // value={triangle}
           // onChange={setTriangle}
           name="osc-radio"
@@ -39,7 +43,10 @@ const Oscillators = (props) => {
         <input
           type="radio"
           value={oscillatorType}
-          onChange={onSelectOscType}
+          // onClick={setOscillatorType}
+          onClick={() => onSelectOscType("sine")}
+          // onClick={() => setOscillatorType("square")}
+          // onChange={onSelectOscType}
           // value={square}
           // onChange={setSquare}
           name="osc-radio"

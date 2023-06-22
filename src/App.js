@@ -20,22 +20,23 @@ function App() {
   // const [release, setRelease] = useState(0);
   const [oscillatorType, setOscillatorType] = useState("sine");
   const [synthType, setSynthType] = useState("amSynth");
-
-  // const [sine, setSine] = useState();
-  // const [triangle, setTriangle] = useState();
-  // const [square, setSquare] = useState();
+  const [pan, setPan] = useState(0);
+  const [tempo, setTempo] = useState(60);
 
   const onPlayAudio = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const onSelectOscType = (e) => {
-    setOscillatorType(e.target.value);
+  const onSelectOscType = () => {
+    const changeOsc = [...oscillatorType];
+    setOscillatorType(changeOsc);
   };
+
+  // console.log(typeof oscillatorType);
 
   return (
     <div className="App">
-      <Song isPlaying={isPlaying} volume={volume}>
+      <Song isPlaying={isPlaying} bpm={tempo} volume={volume}>
         <Track
           steps={[
             "D3",
@@ -64,6 +65,7 @@ function App() {
           <Effect type="distortion" wet={distortion} />
           <Effect type="tremelo" wet={tremelo} />
           <Effect type="autoFilter" wet={autoFilter} />
+          <Effect type="autoPanner" wet={pan} />
         </Track>
       </Song>
 
@@ -86,18 +88,14 @@ function App() {
         decay={decay}
         setDecay={setDecay}
         oscillatorType={oscillatorType}
-        // setOscillatorType={setOscillatorType}
-
+        setOscillatorType={setOscillatorType}
         onSelectOscType={onSelectOscType}
-        // sine={sine}
-        // setSine={setSine}
-        // triangle={triangle}
-        // setTriangle={setTriangle}
-        // square={square}
-        // setSquare={setSquare}
-
+        pan={pan}
+        setPan={setPan}
         synthType={synthType}
         setSynthType={setSynthType}
+        tempo={tempo}
+        setTempo={setTempo}
       />
     </div>
   );

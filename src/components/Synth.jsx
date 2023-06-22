@@ -8,7 +8,7 @@ import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
 const Synth = (props) => {
-  console.log(props, "synth component");
+  console.log(props.oscillatorType, "synth component");
   return (
     <>
       <div className="synth-container">
@@ -48,7 +48,12 @@ const Synth = (props) => {
             decay={props.decay}
             setDecay={props.setDecay}
           />
-          <Tempo />
+          <Tempo
+            pan={props.pan}
+            setPan={props.setPan}
+            tempo={props.tempo}
+            setTempo={props.setTempo}
+          />
           <Sequencer />
           <SequencerControls onPlayAudio={props.onPlayAudio} />
         </div>

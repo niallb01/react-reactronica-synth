@@ -1,11 +1,6 @@
-import { useState } from "react";
 import "../panel.css";
 
 const Engine = (props) => {
-  // const [amSynth, setAmSynth] = useState();
-  // const [fmSynth, setFmSynth] = useState();
-  // const [duoSynth, setDuoSynth] = useState();
-
   const { synthType, setSynthType } = props;
 
   return (

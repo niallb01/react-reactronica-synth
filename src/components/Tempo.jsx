@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Donut } from "react-dial-knob";
 import "../panel.css";
 
 const Tempo = (props) => {
-  const [tempo, setTempo] = useState(0);
-  const [panAmount, setPanAmount] = useState(0);
+  const { pan, setPan, tempo, setTempo } = props;
 
   return (
     <>
@@ -29,11 +27,11 @@ const Tempo = (props) => {
           min={0}
           max={100}
           step={1}
-          value={panAmount}
+          value={pan}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setPanAmount}
+          onValueChange={setPan}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>
