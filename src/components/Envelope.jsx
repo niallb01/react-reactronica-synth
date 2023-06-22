@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { Donut } from "react-dial-knob";
 import "../panel.css";
 
-const Envelope = (props) => {
-  const [attack, setAttack] = useState(0);
-  const [decay, setDecay] = useState(0);
-  const [sustain, setSustain] = useState(0);
-  const [release, setRelease] = useState(0);
+// const { attack, setAttack, decay, setDecay } = props;
 
+// console.log(props, "envelope");
+
+const Envelope = (props) => {
   return (
     <>
       <div className="envelope-container-1">
@@ -17,11 +15,11 @@ const Envelope = (props) => {
           min={0}
           max={100}
           step={1}
-          value={attack}
+          value={props.attack}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setAttack}
+          onValueChange={props.setAttack}
           ariaLabelledBy={"knob-label"}
         ></Donut>
         <label className={"knob-label"}>Decay</label>
@@ -30,11 +28,11 @@ const Envelope = (props) => {
           min={0}
           max={100}
           step={1}
-          value={decay}
+          value={props.decay}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setDecay}
+          onValueChange={props.setDecay}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>
@@ -46,11 +44,11 @@ const Envelope = (props) => {
           min={0}
           max={100}
           step={1}
-          value={sustain}
+          value={props.sustain}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setSustain}
+          onValueChange={props.setSustain}
           ariaLabelledBy={"knob-label"}
         ></Donut>
 
@@ -60,11 +58,11 @@ const Envelope = (props) => {
           min={0}
           max={100}
           step={1}
-          value={release}
+          value={props.release}
           theme={{
             donutColor: "silver",
           }}
-          onValueChange={setRelease}
+          onValueChange={props.setRelease}
           ariaLabelledBy={"knob-label"}
         ></Donut>
       </div>

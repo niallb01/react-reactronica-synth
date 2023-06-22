@@ -8,13 +8,26 @@ import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
 const Synth = (props) => {
-  // console.log(props, "synth component");
+  console.log(props, "synth component");
   return (
     <>
       <div className="synth-container">
         <div className="front-panel">
-          <Oscillators />
-          <Engine />
+          <Oscillators
+            oscillatorType={props.oscillatorType}
+            // setOcillatorType={props.setOscillatorType}
+            onSelectOscType={props.onSelectOscType}
+            // sine={props.sine}
+            // setSine={props.setSine}
+            // triangle={props.triangle}
+            // setTriangle={props.setTriangle}
+            // square={props.square}
+            // setSquare={props.setSquare}
+          />
+          <Engine
+            synthType={props.synthType}
+            setSynthType={props.setSynthType}
+          />
           <FXKnobs
             volume={props.volume}
             setVolume={props.setVolume}
@@ -29,7 +42,12 @@ const Synth = (props) => {
             autoFilter={props.autoFilter}
             setAutoFilter={props.setAutoFilter}
           />
-          <Envelope />
+          <Envelope
+            attack={props.attack}
+            setAttack={props.setAttack}
+            decay={props.decay}
+            setDecay={props.setDecay}
+          />
           <Tempo />
           <Sequencer />
           <SequencerControls onPlayAudio={props.onPlayAudio} />

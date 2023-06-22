@@ -2,9 +2,11 @@ import { useState } from "react";
 import "../panel.css";
 
 const Engine = (props) => {
-  const [amSynth, setAmSynth] = useState();
-  const [fmSynth, setFmSynth] = useState();
-  const [duoSynth, setDuoSynth] = useState();
+  // const [amSynth, setAmSynth] = useState();
+  // const [fmSynth, setFmSynth] = useState();
+  // const [duoSynth, setDuoSynth] = useState();
+
+  const { synthType, setSynthType } = props;
 
   return (
     <>
@@ -15,8 +17,8 @@ const Engine = (props) => {
         </label>
         <input
           type="radio"
-          value={amSynth}
-          onChange={setAmSynth}
+          value={synthType}
+          onClick={() => setSynthType("amSynth")}
           name="engine-radio"
           label
         ></input>
@@ -25,8 +27,10 @@ const Engine = (props) => {
         </label>
         <input
           type="radio"
-          value={fmSynth}
-          onChange={setFmSynth}
+          value={synthType}
+          onClick={() => setSynthType("fmSynth")}
+          // value={fmSynth}
+          // onChange={setFmSynth}
           name="engine-radio"
         ></input>
         <label className="synth-engine-label" htmlFor="">
@@ -34,8 +38,10 @@ const Engine = (props) => {
         </label>
         <input
           type="radio"
-          value={duoSynth}
-          onChange={setDuoSynth}
+          value={synthType}
+          onClick={() => setSynthType("duoSynth")}
+          // value={duoSynth}
+          // onChange={setDuoSynth}
           name="engine-radio"
         ></input>
       </div>

@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Donut } from "react-dial-knob";
 import "../panel.css";
 

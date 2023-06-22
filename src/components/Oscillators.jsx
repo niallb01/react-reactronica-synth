@@ -2,9 +2,11 @@ import { useState } from "react";
 import "../panel.css";
 
 const Oscillators = (props) => {
-  const [sine, setSine] = useState();
-  const [triangle, setTriangle] = useState();
-  const [square, setSquare] = useState();
+  // const [sine, setSine] = useState();
+  // const [triangle, setTriangle] = useState();
+  // const [square, setSquare] = useState();
+
+  const { oscillatorType, onSelectOscType } = props;
 
   return (
     <>
@@ -15,8 +17,8 @@ const Oscillators = (props) => {
         </label>
         <input
           type="radio"
-          value={sine}
-          onChange={setSine}
+          value={oscillatorType}
+          onChange={onSelectOscType}
           name="osc-radio"
           label
         ></input>
@@ -25,8 +27,10 @@ const Oscillators = (props) => {
         </label>
         <input
           type="radio"
-          value={triangle}
-          onChange={setTriangle}
+          value={oscillatorType}
+          onChange={onSelectOscType}
+          // value={triangle}
+          // onChange={setTriangle}
           name="osc-radio"
         ></input>
         <label className="oscillators-label" htmlFor="">
@@ -34,8 +38,10 @@ const Oscillators = (props) => {
         </label>
         <input
           type="radio"
-          value={square}
-          onChange={setSquare}
+          value={oscillatorType}
+          onChange={onSelectOscType}
+          // value={square}
+          // onChange={setSquare}
           name="osc-radio"
         ></input>
       </div>

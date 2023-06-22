@@ -14,9 +14,23 @@ function App() {
   const [distortion, setDistortion] = useState(0);
   const [tremelo, setTremelo] = useState(0);
   const [autoFilter, setAutoFilter] = useState(0);
+  const [attack, setAttack] = useState(0);
+  const [decay, setDecay] = useState(0);
+  // const [sustain, setSustain] = useState(0);
+  // const [release, setRelease] = useState(0);
+  const [oscillatorType, setOscillatorType] = useState("sine");
+  const [synthType, setSynthType] = useState("amSynth");
+
+  // const [sine, setSine] = useState();
+  // const [triangle, setTriangle] = useState();
+  // const [square, setSquare] = useState();
 
   const onPlayAudio = () => {
     setIsPlaying(!isPlaying);
+  };
+
+  const onSelectOscType = (e) => {
+    setOscillatorType(e.target.value);
   };
 
   return (
@@ -37,7 +51,14 @@ function App() {
             "D3",
           ]}
         >
-          <Instrument type="synth" />
+          <Instrument
+            // type="synth"
+            type={synthType}
+            envelope={attack}
+            // oscillator={oscillatorType}
+            oscillator={oscillatorType}
+          />
+
           <Effect type="freeverb" wet={reverb} />
           <Effect type="feedbackDelay" wet={delay} />
           <Effect type="distortion" wet={distortion} />
@@ -60,9 +81,25 @@ function App() {
         setTremelo={setTremelo}
         autoFilter={autoFilter}
         setAutoFilter={setAutoFilter}
+        attack={attack}
+        setAttack={setAttack}
+        decay={decay}
+        setDecay={setDecay}
+        oscillatorType={oscillatorType}
+        // setOscillatorType={setOscillatorType}
+
+        onSelectOscType={onSelectOscType}
+        // sine={sine}
+        // setSine={setSine}
+        // triangle={triangle}
+        // setTriangle={setTriangle}
+        // square={square}
+        // setSquare={setSquare}
+
+        synthType={synthType}
+        setSynthType={setSynthType}
       />
     </div>
   );
 }
-
 export default App;
