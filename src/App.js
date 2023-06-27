@@ -3,6 +3,7 @@ import { Song, Track, Instrument, Effect } from "reactronica";
 import "./App.css";
 import { useState } from "react";
 import Synth from "./components/Synth";
+import { notes, keysToNotes } from "./utils";
 // audio context - audio nodes - osc, filter, reverb, delay - can be sound modification objects - filter - reverb - compression
 // nodes are objects - console log to see properties - when we create node we need to route it somewhere - speaker or another node before destination(speakers or other output)
 
@@ -21,43 +22,54 @@ function App() {
   const [oscillatorType, setOscillatorType] = useState("sine");
   const [synthType, setSynthType] = useState("amSynth");
   const [pan, setPan] = useState(0);
-  const [tempo, setTempo] = useState(60);
+  const [tempo, setTempo] = useState(80);
+  // const [notes, setNotes] = useState(["C3", "C#3", "D3", "D#3", "E3"]);
+  const [synthSteps, setSynthSteps] = useState([
+    "D3",
+    null,
+    "F3",
+    "A3",
+    null,
+    "D4",
+    null,
+    "C5",
+    null,
+    null,
+    "D3",
+    "D3",
+    null,
+    "F4",
+    "A3",
+    null,
+    "F4",
+    null,
+    "C5",
+    "D3",
+    null,
+    null,
+  ]);
 
   const onPlayAudio = () => {
     setIsPlaying(!isPlaying);
   };
 
   const onSelectOscType = () => {
-    const changeOsc = [...oscillatorType];
-    setOscillatorType(changeOsc);
+    // const changeOsc = [...oscillatorType];
+    setOscillatorType();
   };
 
-  // console.log(typeof oscillatorType);
+  // const keysToNotes = "awsedftgyhujkolp;'".split("");
+  // console.log(keysToNotes);
 
   return (
     <div className="App">
-      <Song isPlaying={isPlaying} bpm={tempo} volume={volume}>
-        <Track
-          steps={[
-            "D3",
-            null,
-            "F3",
-            "A3",
-            null,
-            "D4",
-            null,
-            "C5",
-            null,
-            null,
-            "D3",
-          ]}
-        >
+      <Song isPlaying={isPlaying} bpm={tempo} volume={volume} notes={notes}>
+        <Track steps={synthSteps}>
           <Instrument
-            // type="synth"
             type={synthType}
             envelope={attack}
-            // oscillator={oscillatorType}
             oscillator={oscillatorType}
+            // notes={notes}
           />
 
           <Effect type="freeverb" wet={reverb} />
@@ -96,6 +108,9 @@ function App() {
         setSynthType={setSynthType}
         tempo={tempo}
         setTempo={setTempo}
+        notes={notes}
+        // setNotes={setNotes}
+        keysToNotes={keysToNotes}
       />
     </div>
   );

@@ -12,7 +12,7 @@ const Tempo = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
+          step={0.25}
           value={tempo}
           theme={{
             donutColor: "silver",
@@ -26,7 +26,7 @@ const Tempo = (props) => {
           diameter={30}
           min={0}
           max={100}
-          step={1}
+          step={0.25}
           value={pan}
           theme={{
             donutColor: "silver",

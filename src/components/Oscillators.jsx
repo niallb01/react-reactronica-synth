@@ -1,12 +1,9 @@
 import "../panel.css";
 
 const Oscillators = (props) => {
-  // const [sine, setSine] = useState();
-  // const [triangle, setTriangle] = useState();
-  // const [square, setSquare] = useState();
-
   const { oscillatorType, onSelectOscType } = props;
-  console.log("osc comp", props);
+
+  // console.log("osc comp", props);
   return (
     <>
       <div className="oscillators-container">

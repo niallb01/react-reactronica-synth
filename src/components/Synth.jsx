@@ -8,7 +8,8 @@ import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
 const Synth = (props) => {
-  console.log(props.oscillatorType, "synth component");
+  // console.log(props.notes, props.keysToNotes, "synth component");
+
   return (
     <>
       <div className="synth-container">
@@ -17,12 +18,6 @@ const Synth = (props) => {
             oscillatorType={props.oscillatorType}
             // setOcillatorType={props.setOscillatorType}
             onSelectOscType={props.onSelectOscType}
-            // sine={props.sine}
-            // setSine={props.setSine}
-            // triangle={props.triangle}
-            // setTriangle={props.setTriangle}
-            // square={props.square}
-            // setSquare={props.setSquare}
           />
           <Engine
             synthType={props.synthType}
@@ -55,9 +50,18 @@ const Synth = (props) => {
             setTempo={props.setTempo}
           />
           <Sequencer />
-          <SequencerControls onPlayAudio={props.onPlayAudio} />
+          <SequencerControls
+            onPlayAudio={props.onPlayAudio}
+            steps={props.steps}
+            setSteps={props.setSteps}
+          />
         </div>
-        <Keyboard />
+        <Keyboard
+          notes={props.notes}
+          keysToNotes={props.keysToNotes}
+          setNotes={props.setNotes}
+          onPlayAudio={props.onPlayAudio}
+        />
       </div>
     </>
   );
