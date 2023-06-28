@@ -6,6 +6,7 @@ import Envelope from "./Envelope";
 import Tempo from "./Tempo";
 import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
+import Key from "./Key";
 
 const Synth = (props) => {
   // console.log(props.notes, props.keysToNotes, "synth component");
@@ -61,7 +62,14 @@ const Synth = (props) => {
           keysToNotes={props.keysToNotes}
           setNotes={props.setNotes}
           onPlayAudio={props.onPlayAudio}
+          setSynthSteps={props.setSynthSteps}
         />
+        {/* <Key
+          notes={props.notes}
+          keysToNotes={props.keysToNotes}
+          setNotes={props.setNotes}
+          onPlayAudio={props.onPlayAudio}
+        /> */}
       </div>
     </>
   );

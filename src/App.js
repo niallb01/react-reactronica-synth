@@ -25,27 +25,47 @@ function App() {
   const [tempo, setTempo] = useState(80);
   // const [notes, setNotes] = useState(["C3", "C#3", "D3", "D#3", "E3"]);
   const [synthSteps, setSynthSteps] = useState([
+    // "D3",
+    // null,
+    // "F3",
+    // "A3",
+    // null,
+    // "D4",
+    // null,
+    // "C5",
+    // null,
+    // null,
+    // "D3",
+    // "D3",
+    // null,
+    // "F4",
+    // "A3",
+    // null,
+    // "F4",
+    // null,
+    // "C5",
+    // "D3",
+    // null,
+    // null,
+
+    "C3",
+    null,
     "D3",
+    null,
+    "E3",
     null,
     "F3",
+    null,
+
+    "G",
+    null,
+
     "A3",
     null,
-    "D4",
+
+    "B3",
     null,
-    "C5",
-    null,
-    null,
-    "D3",
-    "D3",
-    null,
-    "F4",
-    "A3",
-    null,
-    "F4",
-    null,
-    "C5",
-    "D3",
-    null,
+    "C4",
     null,
   ]);
 
@@ -58,11 +78,28 @@ function App() {
     setOscillatorType();
   };
 
-  // const keysToNotes = "awsedftgyhujkolp;'".split("");
-  // console.log(keysToNotes);
+  const onKeyDown = (e) => {
+    console.log(e.key);
+    if (e.key === "a") {
+      const notesArr = ["C3"];
+      setSynthSteps(notesArr);
+      onPlayAudio();
+    }
+    if (e.key === "w") {
+      const notesArr = ["D3"];
+      setSynthSteps(notesArr);
+      onPlayAudio();
+    }
+  };
+
+  //setTimeout begins when key goes down, if no keydown stop
+
+  const onKeyUp = (e) => {
+    onPlayAudio();
+  };
 
   return (
-    <div className="App">
+    <div className="App" onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
       <Song isPlaying={isPlaying} bpm={tempo} volume={volume} notes={notes}>
         <Track steps={synthSteps}>
           <Instrument
@@ -111,6 +148,7 @@ function App() {
         notes={notes}
         // setNotes={setNotes}
         keysToNotes={keysToNotes}
+        setSynthSteps={setSynthSteps}
       />
     </div>
   );
