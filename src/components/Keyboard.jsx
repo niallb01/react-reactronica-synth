@@ -1,15 +1,10 @@
-import Key from "./Key";
-// requirements - each key needs to track specific note, needs to track isPlaying (change color)
-// create keys component and map over it? key needs <Key note='C3' />? - need onkeydown event listeners - useeffect?
-
 const Keyboard = (props) => {
-  // const { notes, setNotes, onPlayAudio } = props;
-  const { notes, keysToNotes, setSynthSteps, onPlayAudio } = props;
+  const { notes, onPlayAudio, setNotes } = props;
 
-  // when we clicck on note we make arr and it's storing data inside app
+  // when we click on note we make arr and it's storing data inside app
   const setNote = (note) => {
-    const notesArr = ["C3"];
-    setSynthSteps(notesArr);
+    const notesArr = ["C3", "C#3", "D3"];
+    setNotes(notesArr);
     onPlayAudio();
   };
 
@@ -20,13 +15,21 @@ const Keyboard = (props) => {
       <div className="keyboard-container">
         <ul className="synth-keys">
           <li
-            value={notes}
             className="white-key-li"
-            onClick={() => setNote("C3")}
+            value={notes}
+            onKeyDown={() => setNote("C3")}
             // onKeyUp={!setNote}
           ></li>
-          <li className="black-key-li"></li>
-          <li className="white-key-li"></li>
+          <li
+            className="black-key-li"
+            value={notes}
+            onKeyDown={() => setNote("C#3")}
+          ></li>
+          <li
+            className="white-key-li"
+            value={notes}
+            onKeyDown={() => setNote("D3")}
+          ></li>
           <li className="black-key-li"></li>
           <li className="white-key-li-end"></li>
           <li className="white-key-li"></li>
@@ -49,8 +52,6 @@ const Keyboard = (props) => {
           <li className="black-key-li"></li>
           <li className="white-key-li-end"></li>
         </ul>
-
-        {/* <Key /> */}
       </div>
     </>
   );

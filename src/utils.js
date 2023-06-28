@@ -17,3 +17,47 @@ export const notes = [
 //The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern,
 //puts these substrings into an array, and returns the array.
 export const keysToNotes = "awsedftgyhujkolp;'".split("");
+
+// notes/setNotes
+// "D3",
+// null,
+// "F3",
+// "A3",
+// null,
+// "D4",
+// null,
+// "C5",
+// null,
+// null,
+// "D3",
+// "D3",
+// null,
+// "F4",
+// "A3",
+// null,
+// "F4",
+// null,
+// "C5",
+// "D3",
+// null,
+// null,
+
+// "C3",
+// null,
+// "D3",
+// null,
+// "E3",
+// null,
+// "F3",
+// null,
+
+// "G",
+// null,
+
+// "A3",
+// null,
+
+// "B3",
+// null,
+// "C4",
+// null,

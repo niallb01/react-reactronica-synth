@@ -3,7 +3,6 @@ import { Song, Track, Instrument, Effect } from "reactronica";
 import "./App.css";
 import { useState } from "react";
 import Synth from "./components/Synth";
-import { notes, keysToNotes } from "./utils";
 // audio context - audio nodes - osc, filter, reverb, delay - can be sound modification objects - filter - reverb - compression
 // nodes are objects - console log to see properties - when we create node we need to route it somewhere - speaker or another node before destination(speakers or other output)
 
@@ -23,50 +22,20 @@ function App() {
   const [synthType, setSynthType] = useState("amSynth");
   const [pan, setPan] = useState(0);
   const [tempo, setTempo] = useState(80);
-  // const [notes, setNotes] = useState(["C3", "C#3", "D3", "D#3", "E3"]);
-  const [synthSteps, setSynthSteps] = useState([
-    // "D3",
-    // null,
-    // "F3",
-    // "A3",
-    // null,
-    // "D4",
-    // null,
-    // "C5",
-    // null,
-    // null,
-    // "D3",
-    // "D3",
-    // null,
-    // "F4",
-    // "A3",
-    // null,
-    // "F4",
-    // null,
-    // "C5",
-    // "D3",
-    // null,
-    // null,
-
+  const [notes, setNotes] = useState([
     "C3",
-    null,
+    "C#3",
     "D3",
-    null,
+    "D#3",
     "E3",
-    null,
     "F3",
-    null,
-
+    "F#3",
     "G",
-    null,
-
+    "G#3",
     "A3",
-    null,
-
+    "A#3",
     "B3",
-    null,
     "C4",
-    null,
   ]);
 
   const onPlayAudio = () => {
@@ -78,22 +47,45 @@ function App() {
     setOscillatorType();
   };
 
+  //setTimeout begins when key goes down, if no keydown stop
   const onKeyDown = (e) => {
     console.log(e.key);
     if (e.key === "a") {
       const notesArr = ["C3"];
-      setSynthSteps(notesArr);
+      setNotes(notesArr);
       onPlayAudio();
+      // setTimeout(() => {
+      //   onPlayAudio();
+      // }, 1000);
     }
+
+    // const onKeyDown = (e) => {
+    //   console.log(e.key);
+    //   if (e.key === "a") {
+    //     const notesArr = ["C3"];
+    //     setNotes(notesArr);
+    //     setTimeout(() => {
+    //       onPlayAudio();
+    //     }, 1000);
+    //   }
+
     if (e.key === "w") {
-      const notesArr = ["D3"];
-      setSynthSteps(notesArr);
+      const notesArr = ["D#3"];
+      setNotes(notesArr);
       onPlayAudio();
+      // setTimeout(() => {
+      //   onPlayAudio();
+      // }, 500);
+    }
+    if (e.key === "s") {
+      const notesArr = ["D3"];
+      setNotes(notesArr);
+      onPlayAudio();
+      // setTimeout(() => {
+      //   onPlayAudio();
+      // }, 500);
     }
   };
-
-  //setTimeout begins when key goes down, if no keydown stop
-
   const onKeyUp = (e) => {
     onPlayAudio();
   };
@@ -101,7 +93,7 @@ function App() {
   return (
     <div className="App" onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
       <Song isPlaying={isPlaying} bpm={tempo} volume={volume} notes={notes}>
-        <Track steps={synthSteps}>
+        <Track steps={notes}>
           <Instrument
             type={synthType}
             envelope={attack}
@@ -146,9 +138,8 @@ function App() {
         tempo={tempo}
         setTempo={setTempo}
         notes={notes}
-        // setNotes={setNotes}
-        keysToNotes={keysToNotes}
-        setSynthSteps={setSynthSteps}
+        setNotes={setNotes}
+        // setSynthSteps={setSynthSteps}
       />
     </div>
   );
