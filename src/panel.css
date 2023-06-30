@@ -50,7 +50,8 @@
 
 .fx-knobs-container-1,
 .fx-knobs-container-2,
-.fx-knobs-container-3 {
+.fx-knobs-container-3,
+.fx-knobs-container-4 {
   display: flex;
   /* width: 160px; */
   flex-direction: column;

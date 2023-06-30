@@ -15,6 +15,8 @@ const FXKnobs = (props) => {
     setTremelo,
     autoFilter,
     setAutoFilter,
+    autoWah,
+    setAutoWah,
   } = props;
 
   // console.log(props, "fx comp");
@@ -110,6 +112,22 @@ const FXKnobs = (props) => {
           onValueChange={setAutoFilter}
           ariaLabelledBy={"knob-label"}
         ></Donut>
+
+        <div className="fx-knobs-container-4">
+          <label className={"knob-label"}>Auto Wah</label>
+          <Donut
+            diameter={30}
+            min={0}
+            max={100}
+            step={0.25}
+            value={autoWah}
+            theme={{
+              donutColor: "silver",
+            }}
+            onValueChange={setAutoWah}
+            ariaLabelledBy={"knob-label"}
+          ></Donut>
+        </div>
       </div>
     </>
   );

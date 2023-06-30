@@ -8,8 +8,6 @@ const Keyboard = (props) => {
     onPlayAudio();
   };
 
-  // console.log(props);
-
   return (
     <>
       <div className="keyboard-container">

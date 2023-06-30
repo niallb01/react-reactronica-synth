@@ -2,8 +2,7 @@ import { Donut } from "react-dial-knob";
 import "../panel.css";
 
 // const { attack, setAttack, decay, setDecay } = props;
-
-// console.log(props, "envelope");
+// console.log(props);
 
 const Envelope = (props) => {
   return (

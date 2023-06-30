@@ -8,7 +8,7 @@ import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
 const Synth = (props) => {
-  // console.log(props.notes, props.keysToNotes, "synth component");
+  // console.log(props);
 
   return (
     <>
@@ -36,12 +36,18 @@ const Synth = (props) => {
             setTremelo={props.setTremelo}
             autoFilter={props.autoFilter}
             setAutoFilter={props.setAutoFilter}
+            autoWah={props.autoWah}
+            setAutoWah={props.setAutoWah}
           />
           <Envelope
             attack={props.attack}
             setAttack={props.setAttack}
             decay={props.decay}
             setDecay={props.setDecay}
+            sustain={props.sustain}
+            setSustain={props.setSustain}
+            release={props.release}
+            setRelease={props.setRelease}
           />
           <Tempo
             pan={props.pan}

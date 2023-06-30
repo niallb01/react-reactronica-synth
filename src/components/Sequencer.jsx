@@ -5,7 +5,7 @@ const Sequencer = (props) => {
     <>
       <div className="sequencer-container">
         <p className="sequncer-header">Sequencer</p>
-        <div className="step-container">
+        {/* <div className="step-container">
           <button className="step-btn"></button>
           <button className="step-btn"></button>
           <button className="step-btn"></button>
@@ -38,7 +38,7 @@ const Sequencer = (props) => {
           <button className="step-btn"></button>
           <button className="step-btn"></button>
           <button className="step-btn"></button>
-        </div>
+        </div> */}
       </div>
     </>
   );
