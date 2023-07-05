@@ -12,8 +12,8 @@ const Envelope = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
-          step={1}
+          max={1}
+          step={0.25}
           value={props.attack}
           theme={{
             donutColor: "silver",
@@ -25,8 +25,8 @@ const Envelope = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
-          step={1}
+          max={1}
+          step={0.25}
           value={props.decay}
           theme={{
             donutColor: "silver",
@@ -41,8 +41,8 @@ const Envelope = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
-          step={1}
+          max={1}
+          step={0.25}
           value={props.sustain}
           theme={{
             donutColor: "silver",
@@ -55,8 +55,8 @@ const Envelope = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
-          step={1}
+          max={1}
+          step={0.25}
           value={props.release}
           theme={{
             donutColor: "silver",

@@ -3,7 +3,7 @@ import FXKnobs from "./FXKnobs";
 import Oscillators from "./Oscillators";
 import Engine from "./Engine";
 import Envelope from "./Envelope";
-import Tempo from "./Tempo";
+// import Tempo from "./Tempo";
 import Sequencer from "./Sequencer";
 import SequencerControls from "./SequencerControls";
 
@@ -38,6 +38,8 @@ const Synth = (props) => {
             setAutoFilter={props.setAutoFilter}
             autoWah={props.autoWah}
             setAutoWah={props.setAutoWah}
+            panVol={props.panVol}
+            setPanVol={props.setPanVol}
           />
           <Envelope
             attack={props.attack}
@@ -49,24 +51,24 @@ const Synth = (props) => {
             release={props.release}
             setRelease={props.setRelease}
           />
-          <Tempo
+          {/* <Tempo
             pan={props.pan}
             setPan={props.setPan}
             tempo={props.tempo}
             setTempo={props.setTempo}
-          />
-          <Sequencer />
-          <SequencerControls
-            onPlayAudio={props.onPlayAudio}
-            steps={props.steps}
-            setSteps={props.setSteps}
-          />
+          /> */}
+          {/* <Sequencer />
+            <SequencerControls
+              onPlayAudio={props.onPlayAudio}
+              steps={props.steps}
+              setSteps={props.setSteps}
+            /> */}
         </div>
         <Keyboard
           notes={props.notes}
           setNotes={props.setNotes}
           onPlayAudio={props.onPlayAudio}
-          setSynthSteps={props.setSynthSteps}
+          // setSynthSteps={props.setSynthSteps}
         />
       </div>
     </>

@@ -8,7 +8,7 @@ import Synth from "./components/Synth";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(5);
+  const [volume, setVolume] = useState(0);
   const [reverb, setReverb] = useState(0);
   const [delay, setDelay] = useState(0);
   const [distortion, setDistortion] = useState(0);
@@ -19,11 +19,11 @@ function App() {
   const [sustain, setSustain] = useState(0);
   const [release, setRelease] = useState(0);
   const [autoWah, setAutoWah] = useState(0);
-  const [bitcrusher, setBitcrusher] = useState(0);
-  const [oscillatorType, setOscillatorType] = useState("sine");
+  const [panVol, setPanVol] = useState(0);
+  const [oscillatorType, setOscillatorType] = useState("square");
   const [synthType, setSynthType] = useState("amSynth");
   const [pan, setPan] = useState(0);
-  const [tempo, setTempo] = useState(80);
+  // const [tempo, setTempo] = useState(80);
   const [notes, setNotes] = useState([
     "C3",
     "C#3",
@@ -40,49 +40,52 @@ function App() {
     "C4",
   ]);
 
-  const envelope = [attack, decay, sustain, release];
+  // const envelope = [attack, decay, sustain, release];
 
   const onPlayAudio = () => {
     setIsPlaying(!isPlaying);
   };
 
   const onSelectOscType = () => {
-    // const changeOsc = [...oscillatorType];
     setOscillatorType();
   };
-
   //setTimeout begins when key goes down, if no keydown stop
+  //When the key down event occurs, start the timer. After 0.5 seconds disable play.
+  //If the user performs key up before 0.5, clear the timer.
+  // const onKeyDown = (e) => {
+  //   console.log(e.key);
+  //   if (e.key === "a") {
+  //     const notesArr = ["C3"];
+  //     setNotes(notesArr);
+  //     onPlayAudio();
+  //     if (onKeyUp)
+  //       setTimeout(() => {
+  //         onPlayAudio();
+  //       }, 500);
+  //   }
+
   const onKeyDown = (e) => {
     console.log(e.key);
     if (e.key === "a") {
       const notesArr = ["C3"];
       setNotes(notesArr);
       onPlayAudio();
-      if (onKeyUp) {
-        setTimeout(() => {
-          onPlayAudio();
-        }, 4000);
-      }
     }
 
-    // const onKeyUp = (e) => {
-    //   onPlayAudio();
-    // };
-
     // const onKeyDown = (e) => {
-    //   console.log(e.key);
-    //   if (e.key === "a") {
-    //     const notesArr = ["C3"];
-    //     setNotes(notesArr);
-    //     setTimeout(() => {
+    //   // console.log(e.key);
+    //   setTimeout(() => {
+    //     if (e.key === "a") {
+    //       const notesArr = ["C3"];
+    //       setNotes(notesArr);
     //       onPlayAudio();
-    //     }, 1000);
-    //   }
+    //     }
+    //   }, 500);
 
     if (e.key === "w") {
       const notesArr = ["D#3"];
       setNotes(notesArr);
-      onPlayAudio();
+      setIsPlaying(true);
       // if (onKeyUp) {
       //   setTimeout(() => {
       //     onPlayAudio();
@@ -101,22 +104,30 @@ function App() {
       // }
     }
   };
+
+  // const onKeyUp = (e) => {
+  //   clearTimeout();
+  //   onPlayAudio();
+  // };
+
   const onKeyUp = (e) => {
-    onPlayAudio();
+    setIsPlaying(false);
+    // onPlayAudio();
   };
 
   return (
     <div className="App" onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
-      <Song isPlaying={isPlaying} bpm={tempo} volume={volume} notes={notes}>
+      <Song isPlaying={isPlaying} volume={volume} notes={notes}>
         <Track
-          steps={[{ name: notes, duration: 0.2, velocity: 0.4 }]}
+          // steps={[{ name: notes, duration: 0.3, velocity: 0.4 }]}
+          // steps={[{ name: notes }]}
+          steps={notes}
           pan={pan}
         >
-          {/* <Track steps={[{ name: notes, duration: 0.1, velocity: 0.5 }]}> */}
-
           <Instrument
             type={synthType}
-            oscillator={oscillatorType}
+            // oscillator={oscillatorType}
+            oscillator={[{ type: oscillatorType }]}
             envelope={[
               {
                 attack: attack,
@@ -135,6 +146,7 @@ function App() {
           <Effect type="autoFilter" wet={autoFilter} />
           <Effect type="autoWah" wet={autoWah} />
           <Effect type="autoPanner" wet={pan} />
+          <Effect type="panVol" wet={panVol} />
         </Track>
       </Song>
 
@@ -153,6 +165,8 @@ function App() {
         autoFilter={autoFilter}
         setAutoFilter={setAutoFilter}
         autoWah={autoWah}
+        panVol={panVol}
+        setPanVol={setPanVol}
         setAutoWah={setAutoWah}
         attack={attack}
         setAttack={setAttack}
@@ -169,8 +183,8 @@ function App() {
         setPan={setPan}
         synthType={synthType}
         setSynthType={setSynthType}
-        tempo={tempo}
-        setTempo={setTempo}
+        // tempo={tempo}
+        // setTempo={setTempo}
         notes={notes}
         setNotes={setNotes}
 

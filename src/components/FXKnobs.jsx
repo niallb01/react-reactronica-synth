@@ -1,4 +1,4 @@
-import { Donut } from "react-dial-knob";
+import { Donut, Silver } from "react-dial-knob";
 import "../panel.css";
 
 const FXKnobs = (props) => {
@@ -17,6 +17,8 @@ const FXKnobs = (props) => {
     setAutoFilter,
     autoWah,
     setAutoWah,
+    panVol,
+    setPanVol,
   } = props;
 
   // console.log(props, "fx comp");
@@ -26,12 +28,12 @@ const FXKnobs = (props) => {
         <label className={"knob-label"}>Volume</label>
         <Donut
           diameter={30}
-          min={-50}
+          min={-5}
           max={10}
-          step={1}
+          step={0.25}
           value={volume}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setVolume}
           ariaLabelledBy={"knob-label"}
@@ -41,11 +43,11 @@ const FXKnobs = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
+          max={1}
           step={0.25}
           value={reverb}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setReverb}
           ariaLabelledBy={"knob-label"}
@@ -58,11 +60,11 @@ const FXKnobs = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
+          max={1}
           step={0.25}
           value={delay}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setDelay}
           ariaLabelledBy={"knob-label"}
@@ -72,11 +74,11 @@ const FXKnobs = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
+          max={1}
           step={0.25}
           value={distortion}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setDistortion}
           ariaLabelledBy={"knob-label"}
@@ -89,11 +91,11 @@ const FXKnobs = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
+          max={1}
           step={0.25}
           value={tremelo}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setTremelo}
           ariaLabelledBy={"knob-label"}
@@ -103,11 +105,11 @@ const FXKnobs = (props) => {
         <Donut
           diameter={30}
           min={0}
-          max={100}
+          max={1}
           step={0.25}
           value={autoFilter}
           theme={{
-            donutColor: "silver",
+            donutColor: "grey",
           }}
           onValueChange={setAutoFilter}
           ariaLabelledBy={"knob-label"}
@@ -118,13 +120,26 @@ const FXKnobs = (props) => {
           <Donut
             diameter={30}
             min={0}
-            max={100}
+            max={1}
             step={0.25}
             value={autoWah}
             theme={{
-              donutColor: "silver",
+              donutColor: "grey",
             }}
             onValueChange={setAutoWah}
+            ariaLabelledBy={"knob-label"}
+          ></Donut>
+          <label className={"knob-label"}>Pan Vol</label>
+          <Donut
+            diameter={30}
+            min={0}
+            max={1}
+            step={0.25}
+            value={panVol}
+            theme={{
+              donutColor: "grey",
+            }}
+            onValueChange={setPanVol}
             ariaLabelledBy={"knob-label"}
           ></Donut>
         </div>
